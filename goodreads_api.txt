@@ -1,0 +1,4 @@
+Goodreads api key
+key: pUEQGCOAskn1WDtta6liTQ
+secret: 86Fl5bY1nApFqsidWaXUqV1Q9SG5pBUTrSWlRwS2Q
+Document web for api:https://www.goodreads.com/api/index 
