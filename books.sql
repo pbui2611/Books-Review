@@ -1,0 +1,6 @@
+CREATE TABLE books (
+	t_isbn VARCHAR(32) NOT NULL,
+	t_title VARCHAR(128) NOT NULL,
+	t_author VARCHAR(128) NOT NULL,
+	t_year VARCHAR(32) NOT NULL
+);

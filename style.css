@@ -4,7 +4,43 @@
 	font-family: sans-serif;
 }
 
-.hero{
+header{
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.075);
+	padding: 5px 20px;
+}
+
+.header-nav a{
+	text-decoration: none;
+	cursor: pointer;
+	float: left;
+	font-size: 18px;
+	color: black;
+	text-align: center;
+	padding-top: 5px;
+	margin-top: 15px;
+	margin-left: 30px;
+	border-radius: 4px;
+}
+
+.header-nav a:hover{
+	background: linear-gradient(to right, #3B5998, #3BD0FD);
+	color: black;
+}
+
+.header-logo{
+	display: block;
+	font-size: 44px;
+	background: -webkit-linear-gradient(#1E0BC5, #0BC5AB);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+	float: left;
+	cursor: pointer;
+}
+
+.container{
 	height: 100%;
 	width: 100%;
 	background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url('background-1.jpg');
@@ -17,24 +53,15 @@
 	width: 380px;
 	height: 480px;
 	position: relative;
-	margin: 10% auto;
+	margin: 8% auto;
 	background: #fff;
 	border:5px solid #3BD0FD;
 	padding: 5px;
 	overflow: hidden;
 }
 
-#web-name{
-	display: block;
-	margin: 20px;
-	font-size: 48px;
-	background: -webkit-linear-gradient(#1E0BC5, #0BC5AB);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-weight: bold;
-}
-
 .button-box{
+	top: 12px;
 	width: 220px;
 	display: flex;
 	margin: auto;
@@ -44,7 +71,7 @@
 }
 
 .button-click{
-	padding: 10px 30px;
+	padding: 6px 30px;
 	cursor: pointer;
 	background: transparent;
 	border: 0;
@@ -113,4 +140,12 @@
 
 #register{
 	left: 450px;
+}
+
+.error img{
+	display: block; 
+	width: 260px; 
+	height: 280px;  
+	float: left;
+	vertical-align: top;
 }

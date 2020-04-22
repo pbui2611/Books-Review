@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<header>
+	<a href="#default" class="header-logo"> bookrates</a>
+	<div class="header-nav">
+		<a href="#default">Home</a>
+		<a href="about-us.html">About Us</a>
+		<a href="#">Contact</a>
+		<a style="float: right; margin-right: 5%" href="#">Log out</a>
+	</div>
+</header>
+<body>
+	<div class="container">
+		<div style="width: 480px; height: 460px; position: relative; margin: 8% auto; background: #fff; border:5px solid #3BD0FD; padding: 5px">
+			<div style="display: block; font-size: 42px; background: -webkit-linear-gradient(#1E0BC5, #0BC5AB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; padding-top: 5px">-Home-</div>
+				<p style="display: block; font-size: 21px; text-align: center; line-height: 6px">Welcome to our website.</p>
+				<p style="display: block; font-size: 21px; text-align: center; line-height: 6px">Now you can search for your next books to read.</p>
+				<form action="/search" method="post" style="width: 240px; display: block; top: 180px; width: 320px; margin-left: auto; margin-right: auto; padding-top: 20px">
+					<input type="text" class="input-field" placeholder="By ISBN Number" name="t_search_isbn">
+					<input type="text" class="input-field" placeholder="By Title" name="t_search_title">
+					<input type="text" class="input-field" placeholder="By Author" name="t_search_author">
+				</form>
+				<span style="display: block; text-align: center; font-size: 21px">OR</span>
+				<span style="display: block; font-size: 21px; text-align: center; padding-top: 12px">View all of our books<a style="text-decoration: none" href="#lib"> here.</a></span>
+			</div>
+		</div>
+	</div>
+</body>
