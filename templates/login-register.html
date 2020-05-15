@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title%}Login Or Register{% endblock %}
+
+{% block body %}
+	<div class="form-box">
+		<div class="button-box">
+			<div id="btn"></div>
+			<button type="button" class="button-click" onclick="login()">Log In</button>
+			<button type="button" class="button-click" onclick="register()">Register</button>
+		</div>
+		<div class="social-icons">
+			<img src="static/insta-icon.png">
+			<img src="static/fb-icon.png">
+			<img src="static/tw-icon.png">
+		</div>
+		<div style="width: 280px; text-align: center; border-bottom: 1px solid #DADADA; line-height: 1.6px; margin: auto"><span style="background: #fff; padding: 0 10px">OR</span></div>
+		<form action="{{ url_for('login') }}" method="post" id="login" class="input-box">
+			<input type="text" class="input-field" placeholder="User Email" required name="t_Email">
+			<input type="Password" class="input-field" placeholder="Enter Password" required name="t_Password">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div style="color: red"> {{ message }} </div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<div class="check-box"></div>
+			<button type="submit" class="submit-button">Login</button>
+		</form>
+		<form action="{{ url_for('register') }}" method="post" id="register" class="input-box">
+			<input type="text" class="input-field" placeholder="User ID" required name="t_Name_User">
+			<input type="email" class="input-field" placeholder="Email ID" required name="t_Email">
+			<input type="Password" class="input-field" placeholder="Enter Password" required name="t_Password">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div style="color: red"> {{ message }} </div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<div class="check-box"></div>
+			<button type="submit" class="submit-button">Register</button>
+		</form>
+	</div>
+	<script>
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btn");
+
+		function register(){
+			x.style.left = "-400px";
+			y.style.left = "50px";
+			z.style.left = "110px";
+		}
+		function login(){
+			x.style.left = "50px";
+			y.style.left = "450px";
+			z.style.left = "0px";
+		}
+	</script>
+{% endblock %}

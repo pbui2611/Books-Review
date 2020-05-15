@@ -1,0 +1,45 @@
+{% extends "layout.html" %} 
+
+{% block title %} Book Details {% endblock %} 
+
+{% block body %}
+  <div style="width: 60%; position: relative; margin: 5% auto; background: #fff; border:5px solid #3BD0FD; padding: 5px">
+  <div style="display: block; font-size: 42px; background: -webkit-linear-gradient(#1E0BC5, #0BC5AB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; padding-top: 5px">{{ book[2] }}</div>
+    <div style="padding-top: 32px; line-height: 1.8; text-align: center; display: block">
+      <b>Title:</b> {{ book[2] }}<br>
+      <b>Author:</b> {{ book[3] }}<br>
+      <b>Year:</b> {{ book[4] }}<br>
+      <b>ISBN:</b> {{ book[1] }} <br>
+      <b>Goodreads Average Review:</b> <a style="text-decoration: none" href="https://www.goodreads.com/search?q={{ book[1] }}">{{ book_rating }}</a><br>
+    </div>
+    <div style="margin-left: 75px; margin-top: 24px">
+      <b>Review:</b><br>
+      {% if reviews %}
+        <table id="books_table" style="width: 80%">
+          {% for review in reviews %}
+            <tr style="text-align: center">
+              <td>{{ reviews[5] }} gave {{ reviews[3] }}/5 and commented: {{ reviews[4] }}</td>
+            </tr>
+          {% endfor %}
+        </table> 
+      {% else %}
+        <p style="margin-left: 30px">No one has left a review for this book yet. You can write your comment below.</p>
+      {% endif %}
+    </div>
+    {% if allow_to_rate %}
+      <form action="{{ url_for('review', book_id=book[0]) }}" method="post" style="margin-left: 75px; margin-top: 24px">
+          <b>How many stars would you like to rate?  </b>
+            <select name="book_rating">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+            stars <br>
+            <textarea type="textarea" name="review" placeholder="Add a comment" rows="4" cols="130" draggable="true" style="margin-left: 30px; margin-top: 10px"></textarea>
+            <br>
+            <button type="submit" class="submit-button" style="width:110px; margin-top:10px">Submit</button>
+      </form>
+    {% endif %}
+{% endblock %}

@@ -1,9 +1,3 @@
-{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-}
-
 header{
 	width: 100%;
 	overflow: hidden;
@@ -123,8 +117,8 @@ header{
 .submit-button{
 	width: 85%;
 	cursor: pointer;
-	display: block;
 	margin: auto;
+	display: block;
 	padding: 10px 30px;
 	background: linear-gradient(to right, #3B5998, #3BD0FD);
 	border-radius: 30px;
@@ -147,5 +141,32 @@ header{
 	width: 260px; 
 	height: 280px;  
 	float: left;
-	vertical-align: top;
+}
+
+#books_table {
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#books_table td, #books_table th {
+	border: 1px solid black;
+	padding: 8px;
+}
+
+#books_table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#books_table tr:hover {
+	background-color: #ddd;
+}
+
+#books_table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: aqua;
+	color: black;
+	border-color: black;
 }

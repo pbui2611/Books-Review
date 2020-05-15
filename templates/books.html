@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title%}Search Results{% endblock %}
+
+{% block body %}
+  <div style="width: 90%; position: relative; margin: 8% auto; background: #fff; border:5px solid #3BD0FD; padding: 5px">
+    <div style="display: block; font-size: 42px; background: -webkit-linear-gradient(#1E0BC5, #0BC5AB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; padding-top: 5px">-Results-</div>
+    {% if books %}
+      <table id="books_table" style="width: 80%; margin-top: 24px">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>ISBN</th>
+        </tr>
+        {% for book in books %}
+        <tr style="text-align: center">
+          <td><a style="text-decoration: none" href="{{ url_for('book', book_id = book[0]) }}">{{ book[2] }}</a></td>
+          <td>{{ book[3] }}</td>
+          <td>{{ book[4] }}</td>
+          <td>{{ book[1] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <div style="padding: 10px; background-color: #94e6ffe7; color: black">No results found. Please try again</div>
+    {% endif %}
+    <a style="text-decoration: none; text-align: center; width: 110px; display: block; margin-top: 32px" class="submit-button" href="{{ url_for('search') }}">New Search</a>
+  </div>
+{% endblock %}

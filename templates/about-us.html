@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title%}About Us{% endblock %}
+
+{% block body %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<div class="alert alert-info" role="alert"> {{ message }} </div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<div style="width: 720px; height: 525px; position: relative; margin: 8% auto; background: #fff; border:5px solid #3BD0FD; padding: 5px">
+		<div style="display: block; font-size: 42px; background: -webkit-linear-gradient(#1E0BC5, #0BC5AB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; padding-top: 5%">-Our Mission-</div>
+		<p style="display: block; font-size: 21px; text-align: center; line-height: 6px">Helping you discover new books and share your thoughts.</p>
+		<div style="display: block; font-size: 42px; background: -webkit-linear-gradient(#1E0BC5, #0BC5AB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; padding-top: 0px">-About-</div>
+		<p style="font-size: 21px; text-align: center; padding-left: 40px; padding-right: 40px">
+			Bookrates launched in April 2020. We are here to provide you a tool to help you choose your next great books. You can leave reviews for individual books, and see the reviews made by other people. Please <a style="text-decoration: none" href="{{ url_for('login') }}">log in/register</a> to get access to our library.
+		</p>
+		<img src="static/lib.jpg" style="display: block; width: 256px; height: 171px; margin-left: auto; margin-right: auto">
+	</div>
+{% endblock %}

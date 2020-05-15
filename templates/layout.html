@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="/static/style.css?q=1280549781">
+	</head>
+	<header>
+	<a href="{{url_for('index')}}" class="header-logo"> bookrates</a>
+	<div class="header-nav">
+		<a href="{{url_for('index')}}">Home</a>
+		<a href="{{url_for('aboutus')}}">About Us</a>
+		<a href="#">Contact</a>
+		{% if session.get('logged_in') %}
+			<a style="float: right; margin-right: 5%" href="{{url_for('logout')}}">Logout</a>
+		{% else %}
+			<a style="float: right; margin-right: 5%" href="{{ url_for('login') }}">Login/Register</a>
+		{% endif %}
+	</div>
+</header>
+	<body>
+			<div class="container">
+				{% block body %}
+				{% endblock %}
+			</div>
+	</body>
+</html>
